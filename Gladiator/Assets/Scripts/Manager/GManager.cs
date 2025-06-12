@@ -2,19 +2,14 @@ using UnityEngine;
 
 public class GManager : MonoBehaviour
 {
-    [SerializeField] public PlayerData PlayerData;
-    public static GManager Instance { get; private set; }
+    public static GManager Instance;
+
+    public PlayerData PlayerData;
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+        DontDestroyOnLoad(gameObject);
     }
 }

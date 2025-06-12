@@ -10,12 +10,10 @@ public class CharacterStats : ScriptableObject
     // 방어력
     [SerializeField] int m_DefensePower;
     // 크리티컬 확률
-    [Range(0f, 1f)]
     [SerializeField] float m_criticalChance;
     // 크리티컬 데미지
     [SerializeField] float m_ciriticalDamage;
     // 회피 확률
-    [Range(0f, 1f)]
     [SerializeField] float m_dodgeChance;
     // 스피드
     [SerializeField] int m_speed;
