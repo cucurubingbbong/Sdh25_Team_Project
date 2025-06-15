@@ -27,6 +27,7 @@ public class ItemSlotUI : MonoBehaviour
     {
         if (GoldManager.Instance.TrySpendGold(itemData.price))
         {
+            Destroy(gameObject);
             Debug.Log($"Purchased: {itemData.itemName}");
             InventorySystem.instance.AddItem(itemData , 1);
         }
