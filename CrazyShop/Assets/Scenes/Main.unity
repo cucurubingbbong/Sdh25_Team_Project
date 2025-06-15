@@ -500,7 +500,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 1508062276}
-  itemDatabase: {fileID: 11400000, guid: 9982495562d947746a787a457d14ef16, type: 2}
   currentDay: 1
 --- !u!4 &420413830
 Transform:
@@ -801,7 +800,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &753096078
 RectTransform:
   m_ObjectHideFlags: 0
@@ -876,7 +875,7 @@ GameObject:
   - component: {fileID: 1372517676}
   - component: {fileID: 1372517675}
   m_Layer: 5
-  m_Name: BackButton
+  m_Name: EndButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

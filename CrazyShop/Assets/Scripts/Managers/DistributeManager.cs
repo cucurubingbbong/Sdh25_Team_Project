@@ -3,14 +3,16 @@ using UnityEngine;
 
 public class DistributeManager : MonoBehaviour
 {
-    public GameObject stockPanel;  // StockPanel 참조
+    public GameObject stockPanel; 
     public GameObject itemSlotPrefab;
-    public List<ItemData> itemPool; // 가능한 아이템 리스트
+    public List<ItemData> itemPool; 
 
     private const int cost = 30;
     private bool alreadyDistributed = false;
 
-    public void OnClickDistribute()
+    public static DistributeManager instance;
+
+    public void Distribute()
     {
         if (alreadyDistributed) return;
 
@@ -26,12 +28,13 @@ public class DistributeManager : MonoBehaviour
 
     private void GenerateStock()
     {
+        stockPanel.SetActive(true);
         foreach (Transform child in stockPanel.transform)
         {
-            Destroy(child.gameObject); // 기존 슬롯 제거
+            Destroy(child.gameObject); 
         }
 
-        int count = Random.Range(3, 6); // 3~5개 랜덤
+        int count = Random.Range(3, 6); 
         for (int i = 0; i < count; i++)
         {
             GameObject slot = Instantiate(itemSlotPrefab, stockPanel.transform);

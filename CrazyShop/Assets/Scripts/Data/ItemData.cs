@@ -11,9 +11,3 @@ public class ItemData : ScriptableObject
     public Sprite icon;
 }
 
-
-[CreateAssetMenu(menuName = "Game/ItemDatabase")]
-public class ItemDatabase : ScriptableObject
-{
-    public List<ItemData> items;
-}

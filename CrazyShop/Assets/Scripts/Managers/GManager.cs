@@ -4,7 +4,6 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public InventorySystem inventory;
-    public ItemDatabase itemDatabase;
 
     public int currentDay = 1;
 
@@ -16,7 +15,7 @@ public class GameManager : MonoBehaviour
     public void StartDay()
     {
         Debug.Log($" Day {currentDay} 시작");
-        // 유통 재고 구매 단계
+        DistributeManager.instance.Distribute();
     }
 
     public void EndDay()
@@ -24,6 +23,7 @@ public class GameManager : MonoBehaviour
         Debug.Log($"Day {currentDay} 종료");
         currentDay++;
         StartDay();
+        DistributeManager.instance.ResetDailyDistribution();
     }
 
 }
