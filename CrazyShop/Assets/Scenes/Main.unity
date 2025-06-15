@@ -1186,7 +1186,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 180, y: 180}
-  m_Spacing: {x: 20, y: 20}
+  m_Spacing: {x: 20, y: 100}
   m_Constraint: 1
   m_ConstraintCount: 4
 --- !u!1 &1763086109
@@ -1360,6 +1360,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 31b069b0831dba84ea09c70466021deb, type: 2}
   - {fileID: 11400000, guid: 81acc7ad47c898749ad9ce93c64ebb07, type: 2}
   - {fileID: 11400000, guid: f4cb8399fb3f5a34a91b1fe28d26e1a1, type: 2}
+  cost: 30
+  alreadyDistributed: 0
 --- !u!4 &2064151120
 Transform:
   m_ObjectHideFlags: 0
