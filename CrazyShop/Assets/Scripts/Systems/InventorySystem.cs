@@ -6,6 +6,17 @@ public class InventorySystem : MonoBehaviour
     public static InventorySystem instance;
     public Dictionary<ItemData, int> inventory = new();
 
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
     public void AddItem(ItemData item, int count)
     {
         if (inventory.ContainsKey(item))

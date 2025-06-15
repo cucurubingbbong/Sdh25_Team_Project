@@ -7,10 +7,22 @@ public class DistributeManager : MonoBehaviour
     public GameObject itemSlotPrefab;
     public List<ItemData> itemPool; 
 
-    private const int cost = 30;
-    private bool alreadyDistributed = false;
+    public int cost = 30;
+    public bool alreadyDistributed = false;
 
     public static DistributeManager instance;
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
 
     public void Distribute()
     {
