@@ -1354,7 +1354,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd1653d344b8f514f8df5e792c7e9b7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stockPanel: {fileID: 1684957306}
+  stockPanel: {fileID: 753096077}
+  ItemParent: {fileID: 1684957306}
   itemSlotPrefab: {fileID: 6557330932770464701, guid: 056679f21b45b0141b541ac1cb1b6d51, type: 3}
   itemPool:
   - {fileID: 11400000, guid: 31b069b0831dba84ea09c70466021deb, type: 2}

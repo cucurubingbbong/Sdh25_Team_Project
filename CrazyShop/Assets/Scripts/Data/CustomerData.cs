@@ -8,6 +8,7 @@ public class CustomerData : ScriptableObject
     public CustomerType customerType;
     public Sprite portrait;
     public List<ItemData> preferredItems;
+    public int gold;
 }
 
 public enum CustomerType

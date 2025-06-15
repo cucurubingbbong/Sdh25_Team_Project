@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class DistributeManager : MonoBehaviour
 {
-    public GameObject stockPanel; 
+    public GameObject stockPanel;
+    public GameObject ItemParent;
     public GameObject itemSlotPrefab;
     public List<ItemData> itemPool; 
 
@@ -41,7 +42,7 @@ public class DistributeManager : MonoBehaviour
     private void GenerateStock()
     {
         stockPanel.SetActive(true);
-        foreach (Transform child in stockPanel.transform)
+        foreach (Transform child in ItemParent.transform)
         {
             Destroy(child.gameObject); 
         }
@@ -49,7 +50,7 @@ public class DistributeManager : MonoBehaviour
         int count = Random.Range(3, 6); 
         for (int i = 0; i < count; i++)
         {
-            GameObject slot = Instantiate(itemSlotPrefab, stockPanel.transform);
+            GameObject slot = Instantiate(itemSlotPrefab, ItemParent.transform);
             ItemSlotUI slotUI = slot.GetComponent<ItemSlotUI>();
             ItemData randomItem = itemPool[Random.Range(0, itemPool.Count)];
             slotUI.Setup(randomItem);
