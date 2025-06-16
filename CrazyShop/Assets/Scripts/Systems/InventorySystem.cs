@@ -1,3 +1,4 @@
+// InventorySystem.cs
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,13 +12,16 @@ public class InventorySystem : MonoBehaviour
 
     private void Awake()
     {
-        if (instance != null && instance != this)
+        if (instance != null)
         {
             Destroy(gameObject);
             return;
         }
-        instance = this;
-        DontDestroyOnLoad(gameObject);
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
     public void AddItem(ItemData item, int count)
@@ -49,7 +53,7 @@ public class InventorySystem : MonoBehaviour
         return new Dictionary<ItemData, int>(inventory);
     }
 
-    private void OnInventory()
+    public void OnInventory()
     {
         InvenParent.SetActive(true);
         foreach (Transform child in InvenParent.transform)
@@ -62,10 +66,6 @@ public class InventorySystem : MonoBehaviour
             GameObject slot = Instantiate(InvenSlot, InvenParent.transform);
             InvenSlotUI slotUI = slot.GetComponent<InvenSlotUI>();
             slotUI.InvenSetup(pair.Key, pair.Value);
-
         }
     }
-
-
-
 }

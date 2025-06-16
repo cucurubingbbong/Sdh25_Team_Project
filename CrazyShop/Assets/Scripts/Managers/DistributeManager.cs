@@ -57,6 +57,11 @@ public class DistributeManager : MonoBehaviour
         }
     }
 
+    public void EndDistribute()
+    {
+        stockPanel.SetActive(false);
+    }
+
     public void ResetDailyDistribution()
     {
         alreadyDistributed = false;

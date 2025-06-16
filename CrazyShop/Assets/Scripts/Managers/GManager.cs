@@ -7,6 +7,22 @@ public class GameManager : MonoBehaviour
 
     public int currentDay = 1;
 
+    public int reputation = 0;
+
+    public bool Distribute  = false;
+
+    public static GameManager instance;
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
     private void Start()
     {
         StartDay();

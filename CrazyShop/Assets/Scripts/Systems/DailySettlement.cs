@@ -19,18 +19,6 @@ public class DailySettlement : MonoBehaviour
     public int EarnedUpgradePoints = 0; //오늘 얻은 업그레이드 포인트
     public int Reputation = 0;  //현재 평판 수치, 처음은 0으로 시작
 
-    public static DailySettlement Instance;
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-    }
 
     //결산 데이터를 업데이트 하고 화면에 표시
     public void ShowSettlement(int currentDay)
