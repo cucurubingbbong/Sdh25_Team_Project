@@ -508,8 +508,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1000, y: 100}
+  m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &137152347
 MonoBehaviour:
@@ -2033,7 +2033,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1263907569
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2560,7 +2560,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Gold:1000G
+  m_text: Gold:1000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3564,7 +3564,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.75
+  m_fontSize: 69.45
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3645,6 +3645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd23982ee18f774894ca381eb5f7cc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GamePanel: {fileID: 871176616}
   panel: {fileID: 1263907568}
   portrait: {fileID: 1750210874}
   nameText: {fileID: 1195909373}
@@ -3656,7 +3657,9 @@ MonoBehaviour:
   skipButton: {fileID: 1221973415}
   allCustomers:
   - {fileID: 11400000, guid: fe6700d24f94ae347a81c06059965fb9, type: 2}
+  baseCustomerData: {fileID: 0}
   currentFeel: 0
+  haggleSucceeded: 0
   turn: 0
   maxTurns: 10
 --- !u!4 &2049249460

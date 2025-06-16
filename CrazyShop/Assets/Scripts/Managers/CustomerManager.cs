@@ -21,10 +21,10 @@ public class CustomerSystem : MonoBehaviour
 
     [Header("Data")]
     public List<CustomerData> allCustomers;
-    private CustomerData baseCustomerData;
+    public CustomerData baseCustomerData;
     public Dictionary<ItemData, int> currentItemRequest;
     public float currentFeel;
-    private bool haggleSucceeded = false;
+    public bool haggleSucceeded = false;
 
     public int turn = 0;
     public int maxTurns = 10;
