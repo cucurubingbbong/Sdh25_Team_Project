@@ -39,7 +39,7 @@ public class CustomerSystem : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    void TurnStart()
+    public void TurnStart()
     {
         panel.SetActive(false);
         haggleButton.onClick.AddListener(OnClickHaggle);

@@ -60,6 +60,7 @@ public class DistributeManager : MonoBehaviour
     public void EndDistribute()
     {
         stockPanel.SetActive(false);
+        CustomerSystem.instance.TurnStart();
     }
 
     public void ResetDailyDistribution()
