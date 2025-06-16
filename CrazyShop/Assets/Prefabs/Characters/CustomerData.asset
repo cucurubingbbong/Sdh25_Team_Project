@@ -12,13 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f415c1935b84b10449eecfda18f97053, type: 3}
   m_Name: CustomerData
   m_EditorClassIdentifier: 
-  customerName: 
+  customerName: Test
   customerType: 0
   portrait: {fileID: 0}
   preferredItems:
   - {fileID: 11400000, guid: 31b069b0831dba84ea09c70466021deb, type: 2}
   - {fileID: 11400000, guid: 81acc7ad47c898749ad9ce93c64ebb07, type: 2}
-  - {fileID: 11400000, guid: f4cb8399fb3f5a34a91b1fe28d26e1a1, type: 2}
   requiredItemsList: []
   feel: 0
   gold: 0

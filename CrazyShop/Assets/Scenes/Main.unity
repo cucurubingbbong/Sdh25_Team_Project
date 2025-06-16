@@ -3190,7 +3190,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -50}
+  m_AnchoredPosition: {x: -400, y: 100}
   m_SizeDelta: {x: 1000, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1684957308
@@ -3216,7 +3216,7 @@ MonoBehaviour:
   m_CellSize: {x: 180, y: 180}
   m_Spacing: {x: 20, y: 200}
   m_Constraint: 1
-  m_ConstraintCount: 6
+  m_ConstraintCount: 9
 --- !u!1 &1698370997
 GameObject:
   m_ObjectHideFlags: 0
@@ -3713,6 +3713,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 31b069b0831dba84ea09c70466021deb, type: 2}
   - {fileID: 11400000, guid: 81acc7ad47c898749ad9ce93c64ebb07, type: 2}
   - {fileID: 11400000, guid: f4cb8399fb3f5a34a91b1fe28d26e1a1, type: 2}
+  - {fileID: 11400000, guid: 2efbf64008f491e448be630e9a7671b5, type: 2}
   cost: 30
   alreadyDistributed: 0
 --- !u!4 &2064151120

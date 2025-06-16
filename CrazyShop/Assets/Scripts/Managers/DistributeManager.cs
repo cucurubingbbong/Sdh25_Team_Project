@@ -47,7 +47,7 @@ public class DistributeManager : MonoBehaviour
             Destroy(child.gameObject); 
         }
 
-        int count = Random.Range(3, 6); 
+        int count = Random.Range(10, 20); 
         for (int i = 0; i < count; i++)
         {
             GameObject slot = Instantiate(itemSlotPrefab, ItemParent.transform);
