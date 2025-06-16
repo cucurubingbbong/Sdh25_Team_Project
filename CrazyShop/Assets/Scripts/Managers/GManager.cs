@@ -1,7 +1,7 @@
 // Scripts/Systems/GameManager.cs
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GManager : MonoBehaviour
 {
     public InventorySystem inventory;
 
@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     public bool Distribute  = false;
 
-    public static GameManager instance;
+    public static GManager instance;
     private void Awake()
     {
         if (instance != null && instance != this)

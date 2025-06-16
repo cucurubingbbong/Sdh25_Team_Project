@@ -8,6 +8,7 @@ public class CustomerSystem : MonoBehaviour
 {
     public static CustomerSystem instance;
     [Header("UI¿ä¼Ò")]
+    public GameObject GamePanel;
     public GameObject panel;
     public Image portrait;
     public TMP_Text nameText;
@@ -41,7 +42,8 @@ public class CustomerSystem : MonoBehaviour
 
     public void TurnStart()
     {
-        panel.SetActive(false);
+        panel.SetActive(true);
+        GamePanel.SetActive(true );
         haggleButton.onClick.AddListener(OnClickHaggle);
         sellButton.onClick.AddListener(OnClickSell);
         skipButton.onClick.AddListener(OnClickSkip);
