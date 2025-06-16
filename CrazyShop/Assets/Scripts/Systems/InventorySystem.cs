@@ -6,6 +6,9 @@ public class InventorySystem : MonoBehaviour
     public static InventorySystem instance;
     public Dictionary<ItemData, int> inventory = new();
 
+    public GameObject InvenParent;
+    public GameObject InvenSlot;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -45,4 +48,24 @@ public class InventorySystem : MonoBehaviour
     {
         return new Dictionary<ItemData, int>(inventory);
     }
+
+    private void OnInventory()
+    {
+        InvenParent.SetActive(true);
+        foreach (Transform child in InvenParent.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        foreach (KeyValuePair<ItemData, int> pair in inventory)
+        {
+            GameObject slot = Instantiate(InvenSlot, InvenParent.transform);
+            InvenSlotUI slotUI = slot.GetComponent<InvenSlotUI>();
+            slotUI.InvenSetup(pair.Key, pair.Value);
+
+        }
+    }
+
+
+
 }

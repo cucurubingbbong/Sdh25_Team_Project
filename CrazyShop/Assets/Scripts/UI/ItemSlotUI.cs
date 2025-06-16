@@ -12,6 +12,8 @@ public class ItemSlotUI : MonoBehaviour
 
     public ItemData itemData;
 
+
+
     public void Setup(ItemData data)
     {
         itemData = data;
