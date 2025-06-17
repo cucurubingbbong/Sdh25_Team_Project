@@ -10,6 +10,8 @@ public class InventorySystem : MonoBehaviour
     public GameObject InvenParent;
     public GameObject InvenSlot;
 
+    public bool OnInventroy;
+
     private void Awake()
     {
         if (instance != null)
@@ -55,7 +57,16 @@ public class InventorySystem : MonoBehaviour
 
     public void OnInventory()
     {
-        InvenParent.SetActive(true);
+        if (!OnInventroy)
+        {
+            InvenParent.SetActive(true);
+            OnInventroy = true;
+        }
+        else
+        {
+            OnInventroy = false;
+            InvenParent.SetActive(false);
+        }
         foreach (Transform child in InvenParent.transform)
         {
             Destroy(child.gameObject);
