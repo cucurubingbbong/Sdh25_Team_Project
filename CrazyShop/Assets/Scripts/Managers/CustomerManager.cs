@@ -69,7 +69,7 @@ public class CustomerSystem : MonoBehaviour
         else
         {
             Debug.Log("손님 없음");
-            panel.SetActive(false);
+            NextTurn();
         }
     }
 
@@ -193,7 +193,6 @@ public class CustomerSystem : MonoBehaviour
 
         GoldManager.Instance.AddGold(finalPrice);
         Debug.Log($"{baseCustomerData.customerName}에게 아이템을 판매했습니다. {finalPrice}G 획득!");
-        panel.SetActive(false);
         NextTurn();
     }
 
@@ -202,7 +201,6 @@ public class CustomerSystem : MonoBehaviour
         currentFeel -= 5f;
         currentFeel = Mathf.Clamp(currentFeel, 0f, 100f);
         Debug.Log($"{baseCustomerData.customerName}을(를) 그냥 보냈습니다.");
-        panel.SetActive(false);
         NextTurn();
     }
 
