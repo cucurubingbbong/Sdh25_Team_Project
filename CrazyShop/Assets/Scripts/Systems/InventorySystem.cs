@@ -9,6 +9,7 @@ public class InventorySystem : MonoBehaviour
 
     public GameObject InvenParent;
     public GameObject InvenSlot;
+    //public GameObject InvenIMG;
 
     public bool OnInventroy;
 
@@ -61,11 +62,13 @@ public class InventorySystem : MonoBehaviour
         {
             InvenParent.SetActive(true);
             OnInventroy = true;
+            //InvenIMG.SetActive(true);
         }
         else
         {
             OnInventroy = false;
             InvenParent.SetActive(false);
+            //InvenIMG.SetActive(false);
         }
         foreach (Transform child in InvenParent.transform)
         {
