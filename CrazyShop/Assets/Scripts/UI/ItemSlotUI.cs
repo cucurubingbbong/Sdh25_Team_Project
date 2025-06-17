@@ -30,12 +30,12 @@ public class ItemSlotUI : MonoBehaviour
         if (GoldManager.Instance.TrySpendGold(itemData.price))
         {
             Destroy(gameObject);
-            Debug.Log($"Purchased: {itemData.itemName}");
+            Debug.Log($"구매: {itemData.itemName}");
             InventorySystem.instance.AddItem(itemData , 1);
         }
         else
         {
-            Debug.Log("Not enough gold!");
+            Debug.Log("골드가 충분하지 않네요");
         }
     }
 }

@@ -76,7 +76,6 @@ public class CustomerSystem : MonoBehaviour
     void SpawnCustomer()
     {
         baseCustomerData = allCustomers[Random.Range(0, allCustomers.Count)];
-        // feel 범위 0 이상으로 제한
         currentFeel = Mathf.Clamp(Random.Range(baseCustomerData.feel - 20f, baseCustomerData.feel + 20f), 0f, 100f);
         haggleSucceeded = false;
 
