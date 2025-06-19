@@ -35,6 +35,11 @@ public class GoldManager : MonoBehaviour
         currentGold += amount;
         UpdateGoldUI();
     }
+    public void LossGold(int amount)
+    {
+        currentGold -= amount;
+        UpdateGoldUI();
+    }
 
     void UpdateGoldUI()
     {
