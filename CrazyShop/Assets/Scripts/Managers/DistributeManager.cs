@@ -42,20 +42,40 @@ public class DistributeManager : MonoBehaviour
     private void GenerateStock()
     {
         stockPanel.SetActive(true);
+
+        // 기존 슬롯 제거
         foreach (Transform child in ItemParent.transform)
         {
-            Destroy(child.gameObject); 
+            Destroy(child.gameObject);
         }
 
-        int count = Random.Range(10, 20); 
+        // 아이템 수량을 Dictionary로 정리
+        Dictionary<ItemData, int> stockDict = new Dictionary<ItemData, int>();
+        int count = Random.Range(10, 20);
+
         for (int i = 0; i < count; i++)
+        {
+            ItemData randomItem = itemPool[Random.Range(0, itemPool.Count)];
+
+            if (stockDict.ContainsKey(randomItem))
+            {
+                stockDict[randomItem]++;
+            }
+            else
+            {
+                stockDict[randomItem] = 1;
+            }
+        }
+
+        // 슬롯 생성 (아이템 + 수량)
+        foreach (KeyValuePair<ItemData, int> pair in stockDict)
         {
             GameObject slot = Instantiate(itemSlotPrefab, ItemParent.transform);
             ItemSlotUI slotUI = slot.GetComponent<ItemSlotUI>();
-            ItemData randomItem = itemPool[Random.Range(0, itemPool.Count)];
-            slotUI.Setup(randomItem);
+            slotUI.Setup(pair.Key, pair.Value); // 수량 포함해서 Setup 호출
         }
     }
+
 
     public void EndDistribute()
     {
