@@ -51,7 +51,7 @@ public class DistributeManager : MonoBehaviour
 
         // 아이템 수량을 Dictionary로 정리
         Dictionary<ItemData, int> stockDict = new Dictionary<ItemData, int>();
-        int count = Random.Range(10, 20);
+        int count = Random.Range(30, 60);
 
         for (int i = 0; i < count; i++)
         {
@@ -72,7 +72,7 @@ public class DistributeManager : MonoBehaviour
         {
             GameObject slot = Instantiate(itemSlotPrefab, ItemParent.transform);
             ItemSlotUI slotUI = slot.GetComponent<ItemSlotUI>();
-            slotUI.Setup(pair.Key, pair.Value); // 수량 포함해서 Setup 호출
+            slotUI.Setup(pair.Key, pair.Value);
         }
     }
 

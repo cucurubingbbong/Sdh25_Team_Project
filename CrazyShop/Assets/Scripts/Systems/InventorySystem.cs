@@ -1,6 +1,7 @@
 // InventorySystem.cs
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventorySystem : MonoBehaviour
 {
@@ -9,7 +10,6 @@ public class InventorySystem : MonoBehaviour
 
     public GameObject InvenParent;
     public GameObject InvenSlot;
-    //public GameObject InvenIMG;
 
     public bool OnInventroy;
 
@@ -62,13 +62,20 @@ public class InventorySystem : MonoBehaviour
         {
             InvenParent.SetActive(true);
             OnInventroy = true;
-            //InvenIMG.SetActive(true);
+            CustomerSystem.instance.panel.SetActive(false);
+            Image image = CustomerSystem.instance.GamePanel.GetComponent<Image>();
+            image.color = new Color(111f / 255f, 111f / 255f, 111f / 255f);
+
+
         }
         else
         {
             OnInventroy = false;
             InvenParent.SetActive(false);
-            //InvenIMG.SetActive(false);
+            CustomerSystem.instance.panel.SetActive(true);
+            Image image = CustomerSystem.instance.GamePanel.GetComponent<Image>();
+            image.color = new Color(1f , 1f , 1f);
+
         }
         foreach (Transform child in InvenParent.transform)
         {
