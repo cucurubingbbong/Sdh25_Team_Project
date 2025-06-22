@@ -1,4 +1,4 @@
-// Scripts/Systems/GameManager.cs
+using UnityEditor;
 using UnityEngine;
 
 public class GManager : MonoBehaviour

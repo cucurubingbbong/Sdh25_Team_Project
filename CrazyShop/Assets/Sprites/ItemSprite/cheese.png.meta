@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: c7dabfc7e2292a340a71157f366cd69f
+guid: 587f3bbe9db3a12478578df369d56264
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5414849391045992365
-    second: "\uB9D0\uD48D\uC120_0"
+      213: -4470592730861715767
+    second: cheese_0
+  - first:
+      213: 7447050631415436215
+    second: cheese_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,12 +103,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\uB9D0\uD48D\uC120_0"
+      name: cheese_0
       rect:
         serializedVersion: 2
-        x: 11
+        x: 3
         y: 0
-        width: 1515
+        width: 1523
         height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 350a67efa279ad4b0800000000000000
-      internalID: -5414849391045992365
+      spriteID: 9ce3b85f89345f1c0800000000000000
+      internalID: -4470592730861715767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cheese_1
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 425
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b39dd5d71d395760800000000000000
+      internalID: 7447050631415436215
       vertices: []
       indices: 
       edges: []
@@ -125,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "\uB9D0\uD48D\uC120_0": -5414849391045992365
+      cheese_0: -4470592730861715767
+      cheese_1: 7447050631415436215
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

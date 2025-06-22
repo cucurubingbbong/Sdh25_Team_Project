@@ -10,47 +10,48 @@ public class DailySettlement : MonoBehaviour
     public TextMeshProUGUI lossText;
     public TextMeshProUGUI marginText;
     public TextMeshProUGUI UpgradePointText;
-    public TextMeshProUGUI reputationText;
 
     [Header("결산 데이터")]
     public int TodayProfit = 0; // 오늘 번 금액
     public int TodayLoss = 0;   //오늘 손해본 금액
     public int TotalMargin = 0; //전체 마진(누적임)
     public int EarnedUpgradePoints = 0; //오늘 얻은 업그레이드 포인트
-    public int Reputation = 0;  //현재 평판 수치, 처음은 0으로 시작
+
+    public static DailySettlement instance;
 
 
-    //결산 데이터를 업데이트 하고 화면에 표시
-    public void ShowSettlement(int currentDay)
+    private void Awake()
     {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
+
+        //결산 데이터를 업데이트 하고 화면에 표시
+        public void ShowSettlement(int currentDay)
+        {
         TotalMargin += (TodayProfit - TodayLoss);
 
-        //포인트 및 편팡 계산
+        // 업그레이드 포인트 계산
         EarnedUpgradePoints = (TodayProfit - TodayLoss) / 50;
         EarnedUpgradePoints = Mathf.Max(0, EarnedUpgradePoints); //손해 볼시 0pt
-        Reputation += EarnedUpgradePoints;
 
         // UI
         settlementPanel.SetActive(true);
-        dayText.text = $"Day {currentDay}";
-        profitText.text = $" + {TodayProfit} G";
-        lossText.text = $" - {TodayLoss} G";
-        marginText.text = $"{TotalMargin} G";
-        UpgradePointText.text = $"+ {EarnedUpgradePoints}";
-        reputationText.text = $"Reputaion: {Reputation}";
+        CustomerSystem.instance.GamePanel.SetActive(false);
+        dayText.text = $"{currentDay}일차";
+        profitText.text = $"이익 : {TodayProfit} G";
+        lossText.text = $" 손해 : {TodayLoss} G";
+        marginText.text = $" 마진 : {TotalMargin} G";
+        UpgradePointText.text = $"업그레이드 포인트 + {EarnedUpgradePoints}";
 
         // 다음날 초기화
         TodayProfit = 0;
         TodayLoss = 0;
-    }
-    // 아이템 판매되었을때 수익 기록
-    public void AddProfit(int amount)
-    {
-        TodayProfit += amount;
-    }
-    // 손해 발생시 기록됨 ( ex : 아이템 배분 비용)
-    public void AddLoss(int amount)
-    {
-        TodayLoss += amount;
     }
 }

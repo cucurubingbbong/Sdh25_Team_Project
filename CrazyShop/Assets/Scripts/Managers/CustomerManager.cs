@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,10 +12,14 @@ public class CustomerSystem : MonoBehaviour
     public GameObject GamePanel;
     public GameObject panel;
     public Image portrait;
+    public Sprite[] Feel_Icon;
+    public Image RealFeel;
     public TMP_Text nameText;
     public TMP_Text wantText;
     public TMP_Text feelText;
     public TMP_Text dialogueText;
+    public TMP_Text totalPriceText;         
+    public TMP_Text expectedSuccessText;    
     public TMP_InputField offerPriceInput;
     public Button haggleButton;
     public Button sellButton;
@@ -28,7 +33,7 @@ public class CustomerSystem : MonoBehaviour
     public bool haggleSucceeded = false;
 
     public int turn = 0;
-    public int maxTurns = 10;
+    public int maxTurns = 12;
 
     private void Awake()
     {
@@ -54,30 +59,49 @@ public class CustomerSystem : MonoBehaviour
         sellButton.onClick.AddListener(OnClickSell);
         skipButton.onClick.AddListener(OnClickSkip);
 
-        NextTurn();
+        StartNextTurn();
     }
 
-    public void NextTurn()
+    public void StartNextTurn()
     {
+        StartCoroutine(NextTurn()); 
+    }
+    
+    IEnumerator NextTurn()
+    {
+        portrait.gameObject.SetActive(false);
+        dialogueText.text = "";
+        wantText.text = "";
+        feelText.text = "";
+        totalPriceText.text = "";
+        expectedSuccessText.text = "";
+
+        yield return new WaitForSeconds(2f); 
+
+        portrait.gameObject.SetActive(true);
+
         if (turn >= maxTurns)
         {
             dialogueText.text = "오늘 하루가 끝났습니다.";
             panel.SetActive(false);
-            return;
+            DailySettlement.instance.ShowSettlement(GManager.instance.currentDay);
+            yield break;
         }
 
         turn++;
         float chance = Random.Range(0f, 1f);
-        if (chance < 0.7f)
+        if (chance < 0.5 + GManager.instance.reputation * 0.05)
         {
             SpawnCustomer();
         }
         else
         {
             dialogueText.text = "아무 손님도 오지 않았습니다.";
-            NextTurn();
+            yield return new WaitForSeconds(1f); 
+            StartNextTurn(); 
         }
     }
+
 
     void SpawnCustomer()
     {
@@ -85,7 +109,6 @@ public class CustomerSystem : MonoBehaviour
         currentFeel = Mathf.Clamp(Random.Range(baseCustomerData.feel - 20f, baseCustomerData.feel + 20f), 0f, 100f);
         haggleSucceeded = false;
 
-        // 무작위 요구 아이템 설정
         currentItemRequest = new Dictionary<ItemData, int>();
         int requestCount = Random.Range(1, 4);
 
@@ -99,16 +122,21 @@ public class CustomerSystem : MonoBehaviour
             currentItemRequest[item] = quantity;
         }
 
-        // UI 업데이트
         portrait.sprite = baseCustomerData.portrait;
         nameText.text = baseCustomerData.customerName;
 
         string wantInfo = "";
+        int totalPrice = 0;
         foreach (var pair in currentItemRequest)
         {
             wantInfo += $"- {pair.Key.itemName} x{pair.Value} ({pair.Key.price}G)\n";
+            totalPrice += pair.Key.price * pair.Value;
         }
+
         wantText.text = "요구 아이템:\n" + wantInfo;
+        totalPriceText.text = $"총 가격: {totalPrice}G";
+        expectedSuccessText.text = "예상 확률: -";
+        expectedSuccessText.color = Color.white;
 
         UpdateFeelUI();
         dialogueText.text = baseCustomerData.dialogue.greetLine;
@@ -118,6 +146,9 @@ public class CustomerSystem : MonoBehaviour
     void UpdateFeelUI()
     {
         feelText.text = $"기분: {Mathf.RoundToInt(currentFeel)}";
+        if (currentFeel < 75) RealFeel.sprite = Feel_Icon[1];
+        else if (currentFeel < 25) RealFeel.sprite = Feel_Icon[2];
+        else RealFeel.sprite = Feel_Icon[1];
     }
 
     void OnClickHaggle()
@@ -135,8 +166,6 @@ public class CustomerSystem : MonoBehaviour
         }
 
         float priceRatio = (float)(offerPrice - baseTotalPrice) / baseTotalPrice;
-
-        // 성격에 따라 흥정 성공률 조정
         float baseChance = 60f;
         float feelBonus = (currentFeel - 50f) * 0.5f;
         float pricePenalty = priceRatio * 100f;
@@ -144,35 +173,40 @@ public class CustomerSystem : MonoBehaviour
         switch (baseCustomerData.customerType)
         {
             case CustomerType.BargainHunter:
-                baseChance += 10f; // 흥정 잘됨
-                break;
+                baseChance += 10f; break;
             case CustomerType.Collector:
-                baseChance -= 10f; // 흥정 어려움
-                break;
+                baseChance -= 10f; break;
             case CustomerType.Impulsive:
-                baseChance += 20f; // 흥정 무조건 잘됨
-                break;
+                baseChance += 20f; break;
             case CustomerType.Thief:
-                baseChance -= 15f; // 잘 안됨
-                break;
+                baseChance -= 15f; break;
         }
 
-        float successRate = Mathf.Clamp(baseChance + feelBonus - pricePenalty, 5f, 95f);
+        float successRate = Mathf.Clamp(baseChance + feelBonus - pricePenalty, 0.1f, 99f);
+        expectedSuccessText.text = $"예상 확률: {Mathf.RoundToInt(successRate)}%";
+
+        if (successRate >= 70f)
+            expectedSuccessText.color = Color.green;
+        else if (successRate >= 40f)
+            expectedSuccessText.color = Color.yellow;
+        else
+            expectedSuccessText.color = Color.red;
+
         float roll = Random.Range(0f, 100f);
-
-        dialogueText.text = baseCustomerData.dialogue.haggleLine;
-
         if (roll <= successRate)
         {
+            currentFeel += 3;
+            GManager.instance.reputation += 3;
             haggleSucceeded = true;
-            dialogueText.text += "\n흥정 성공!";
+            dialogueText.text = baseCustomerData.dialogue.haggleLine;
         }
         else
         {
             currentFeel -= 10f;
+            GManager.instance.reputation -= 5;
             currentFeel = Mathf.Clamp(currentFeel, 0f, 100f);
             UpdateFeelUI();
-            dialogueText.text = baseCustomerData.dialogue.failLine + "\n흥정 실패!";
+            dialogueText.text = baseCustomerData.dialogue.failLine;
         }
     }
 
@@ -212,25 +246,24 @@ public class CustomerSystem : MonoBehaviour
         }
 
         GoldManager.Instance.AddGold(finalPrice);
-        dialogueText.text = baseCustomerData.dialogue.successLine + $"\n{finalPrice}G를 벌었습니다.";
+        dialogueText.text = baseCustomerData.dialogue.successLine;
 
-        // 도둑일 경우 확률로 훔치고 사라짐
         if (baseCustomerData.customerType == CustomerType.Thief && Random.value < 0.2f)
         {
             dialogueText.text = "손님이 도망쳤습니다! 돈을 주지 않았습니다.";
             GoldManager.Instance.TrySpendGold(finalPrice);
         }
 
-        NextTurn();
+        StartNextTurn();
     }
 
     void OnClickSkip()
     {
+        dialogueText.text = baseCustomerData.dialogue.skipLine;
         currentFeel -= 5f;
         currentFeel = Mathf.Clamp(currentFeel, 0f, 100f);
         UpdateFeelUI();
-        dialogueText.text = baseCustomerData.dialogue.skipLine;
-        NextTurn();
+        StartNextTurn();
     }
 
     void Shuffle<T>(List<T> list)

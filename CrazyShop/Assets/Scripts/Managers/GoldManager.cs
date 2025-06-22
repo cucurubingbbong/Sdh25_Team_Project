@@ -3,15 +3,20 @@ using TMPro;
 
 public class GoldManager : MonoBehaviour
 {
-    public static GoldManager Instance;
+    public static GoldManager Instance { get; private set; }
 
     public int currentGold = 100;
     public TextMeshProUGUI goldText;
 
     void Awake()
     {
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject); ;
     }
 
     void Start()
@@ -24,6 +29,7 @@ public class GoldManager : MonoBehaviour
         if (currentGold >= amount)
         {
             currentGold -= amount;
+            DailySettlement.instance.TodayLoss += amount;
             UpdateGoldUI();
             return true;
         }
@@ -33,11 +39,13 @@ public class GoldManager : MonoBehaviour
     public void AddGold(int amount)
     {
         currentGold += amount;
+        DailySettlement.instance.TodayProfit += amount; ;
         UpdateGoldUI();
     }
     public void LossGold(int amount)
     {
         currentGold -= amount;
+                    DailySettlement.instance.TodayLoss += amount;
         UpdateGoldUI();
     }
 

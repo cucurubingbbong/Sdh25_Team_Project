@@ -4,15 +4,22 @@ using UnityEngine.InputSystem.Controls;
 public class RanEvent : MonoBehaviour
 {
     public static RanEvent instance;
-    public int rand = Random.Range(0, 100);
+    public int rand;
     public int delta;
 
     public int amount;
 
     private void Awake()
     {
-        if (instance == null) instance = this;
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+        DontDestroyOnLoad(gameObject);
     }
+
 
     public void TriggerRanEvent()
     {
