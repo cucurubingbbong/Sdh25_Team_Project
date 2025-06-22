@@ -54,4 +54,9 @@ public class DailySettlement : MonoBehaviour
         TodayProfit = 0;
         TodayLoss = 0;
     }
+
+    public void StartEvent()
+    {
+        EventManager.instance.TryRunEvent(GManager.instance.currentDay);
+    }
 }

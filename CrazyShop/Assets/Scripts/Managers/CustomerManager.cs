@@ -69,6 +69,7 @@ public class CustomerSystem : MonoBehaviour
     
     IEnumerator NextTurn()
     {
+        portrait.sprite = null;
         portrait.gameObject.SetActive(false);
         dialogueText.text = "";
         wantText.text = "";
@@ -195,15 +196,15 @@ public class CustomerSystem : MonoBehaviour
         float roll = Random.Range(0f, 100f);
         if (roll <= successRate)
         {
-            currentFeel += 3;
-            GManager.instance.reputation += 3;
             haggleSucceeded = true;
+            UpdateFeelUI();
             dialogueText.text = baseCustomerData.dialogue.haggleLine;
         }
         else
         {
-            currentFeel -= 10f;
+            currentFeel -= 5f;
             GManager.instance.reputation -= 5;
+            GManager.instance.reputation = Mathf.Clamp(GManager.instance.reputation, 0, 100);
             currentFeel = Mathf.Clamp(currentFeel, 0f, 100f);
             UpdateFeelUI();
             dialogueText.text = baseCustomerData.dialogue.failLine;

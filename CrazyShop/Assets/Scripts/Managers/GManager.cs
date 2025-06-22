@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 
@@ -12,6 +13,9 @@ public class GManager : MonoBehaviour
     public bool Distribute  = false;
 
     public static GManager instance;
+
+    public TextMeshProUGUI repText;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -26,6 +30,11 @@ public class GManager : MonoBehaviour
     private void Start()
     {
         StartDay();
+    }
+
+    public void Update()
+    {
+        repText.text = reputation.ToString();
     }
 
     public void StartDay()
