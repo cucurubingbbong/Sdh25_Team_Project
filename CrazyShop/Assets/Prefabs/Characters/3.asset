@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f415c1935b84b10449eecfda18f97053, type: 3}
+  m_Name: 3
+  m_EditorClassIdentifier: 
+  customerName: "\uCD98\uC2DD\uC774"
+  customerType: 2
+  portrait: {fileID: 8787363499039458325, guid: 04b7622ccc3586245a69bd6a2f19508c, type: 3}
+  preferredItems:
+  - {fileID: 11400000, guid: a24821a66908c7844aae239a8ed0681f, type: 2}
+  - {fileID: 11400000, guid: b995e823048ca864a8a0da5a671666c5, type: 2}
+  - {fileID: 11400000, guid: 807402bf0bb24ad4aa66a033133af18c, type: 2}
+  - {fileID: 11400000, guid: 006e88b1283bc844bb01f1c26b74d6c2, type: 2}
+  feel: 40
+  gold: 500
+  dialogue:
+    greetLine: "\uC774\uAC70 \uB2EC\uB791\uAED8"
+    haggleLine: "\uC798 \uC4F0\uACA0\uB2F9\uAED8"
+    successLine: "\uAC10\uC0AC\uD55C\uB2F9\uAED8"
+    failLine: "\uBE44\uC2F8\uB2F9\uAED8"
+    skipLine: "\uB2E4\uC74C\uC5D0 \uC624\uACA0\uB2F9\uAED8"

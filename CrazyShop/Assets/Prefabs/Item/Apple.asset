@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac783b46e268dda4fa8635c6c0ef3517, type: 3}
   m_Name: Apple
   m_EditorClassIdentifier: 
-  itemName: Apple
-  price: 150
+  itemName: "\uC0AC\uACFC"
+  price: 70
   icon: {fileID: -7832214784768987486, guid: 75b21daa8a4a31b44a199d379eb34cc6, type: 3}

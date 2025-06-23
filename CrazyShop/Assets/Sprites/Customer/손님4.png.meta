@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 90ba341bb9efe5a4989d1becddcb6e57
+guid: 4851875a1752bf34f9127de284f964c7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4875634143457117404
-    second: Blue_Potion_0
+      213: 5552990573947929584
+    second: "\uC190\uB2D84_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Blue_Potion_0
+      name: "\uC190\uB2D84_0"
       rect:
         serializedVersion: 2
-        x: 0
+        x: 420
         y: 0
-        width: 1024
-        height: 1536
+        width: 2108
+        height: 2446
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 42bf8782494465cb0800000000000000
-      internalID: -4875634143457117404
+      spriteID: 0f34249818f201d40800000000000000
+      internalID: 5552990573947929584
       vertices: []
       indices: 
       edges: []
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "\uC190\uB2D84_0": 5552990573947929584
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

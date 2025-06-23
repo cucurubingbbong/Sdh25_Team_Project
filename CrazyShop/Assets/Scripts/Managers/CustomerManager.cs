@@ -64,20 +64,24 @@ public class CustomerSystem : MonoBehaviour
 
     public void StartNextTurn()
     {
-        StartCoroutine(NextTurn()); 
+        StartCoroutine(NextTurn());
+        portrait.gameObject.SetActive(false);
     }
     
     IEnumerator NextTurn()
     {
+        haggleButton.gameObject.SetActive(false);
+        sellButton.gameObject.SetActive(false) ;
+        skipButton.gameObject.SetActive(false);
+        yield return new WaitForSeconds(2f);
         portrait.sprite = null;
         portrait.gameObject.SetActive(false);
+        nameText.text = "";
         dialogueText.text = "";
         wantText.text = "";
         feelText.text = "";
         totalPriceText.text = "";
         expectedSuccessText.text = "";
-
-        yield return new WaitForSeconds(2f); 
 
         portrait.gameObject.SetActive(true);
 
@@ -97,6 +101,7 @@ public class CustomerSystem : MonoBehaviour
         }
         else
         {
+            panel.SetActive(false);
             dialogueText.text = "아무 손님도 오지 않았습니다.";
             yield return new WaitForSeconds(1f); 
             StartNextTurn(); 
@@ -106,6 +111,9 @@ public class CustomerSystem : MonoBehaviour
 
     void SpawnCustomer()
     {
+        haggleButton.gameObject.SetActive(true);
+        sellButton.gameObject.SetActive(true);
+        skipButton.gameObject.SetActive(true);
         baseCustomerData = allCustomers[Random.Range(0, allCustomers.Count)];
         currentFeel = Mathf.Clamp(Random.Range(baseCustomerData.feel - 20f, baseCustomerData.feel + 20f), 0f, 100f);
         haggleSucceeded = false;

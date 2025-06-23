@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac783b46e268dda4fa8635c6c0ef3517, type: 3}
-  m_Name: Bread
+  m_Name: Feather
   m_EditorClassIdentifier: 
-  itemName: "\uBE75"
-  price: 115
-  icon: {fileID: -4431494890709657585, guid: af1a19df0ac488645afdd20a4edecc96, type: 3}
+  itemName: "\uAD34\uC870\uC758\uAE43\uD138"
+  price: 125
+  icon: {fileID: 1500134969566573645, guid: 865acbed5026cc94d99fb4d55b02fe20, type: 3}

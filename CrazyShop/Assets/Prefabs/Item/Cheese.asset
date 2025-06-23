@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac783b46e268dda4fa8635c6c0ef3517, type: 3}
   m_Name: Cheese
   m_EditorClassIdentifier: 
-  itemName: Cheese
-  price: 111
+  itemName: "\uCE58\uC988"
+  price: 52
   icon: {fileID: -4470592730861715767, guid: 587f3bbe9db3a12478578df369d56264, type: 3}

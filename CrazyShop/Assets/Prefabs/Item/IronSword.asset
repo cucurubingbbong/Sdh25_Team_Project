@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac783b46e268dda4fa8635c6c0ef3517, type: 3}
   m_Name: IronSword
   m_EditorClassIdentifier: 
-  itemName: IronSword
-  price: 355
+  itemName: "\uCCA0\uAC80"
+  price: 322
   icon: {fileID: -3753825769889500098, guid: 1c36a3b99a20b13459a7391c4d53bef2, type: 3}

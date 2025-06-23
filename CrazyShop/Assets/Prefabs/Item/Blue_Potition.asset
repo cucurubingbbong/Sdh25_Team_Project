@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac783b46e268dda4fa8635c6c0ef3517, type: 3}
-  m_Name: Bread
+  m_Name: Blue_Potition
   m_EditorClassIdentifier: 
-  itemName: "\uBE75"
-  price: 115
-  icon: {fileID: -4431494890709657585, guid: af1a19df0ac488645afdd20a4edecc96, type: 3}
+  itemName: "\uD30C\uB780\uD3EC\uC158"
+  price: 121
+  icon: {fileID: -2615874204119335, guid: 1a76f24f6aaa4984a97ab88346009da8, type: 3}

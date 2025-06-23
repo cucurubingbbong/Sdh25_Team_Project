@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f415c1935b84b10449eecfda18f97053, type: 3}
+  m_Name: 4
+  m_EditorClassIdentifier: 
+  customerName: "\uC911\uC77C\uBCD1"
+  customerType: 4
+  portrait: {fileID: 5552990573947929584, guid: 4851875a1752bf34f9127de284f964c7, type: 3}
+  preferredItems:
+  - {fileID: 11400000, guid: 006e88b1283bc844bb01f1c26b74d6c2, type: 2}
+  - {fileID: 11400000, guid: 0e9151af810f07640986c48affdda7bb, type: 2}
+  - {fileID: 11400000, guid: 30e49978ea732eb4588d836941f981f7, type: 2}
+  - {fileID: 11400000, guid: 324b2b7268e9b154d99035c30f32665f, type: 2}
+  feel: 45
+  gold: 500
+  dialogue:
+    greetLine: ...........
+    haggleLine: O.........
+    successLine: OK.......
+    failLine: X......
+    skipLine: ......BB
