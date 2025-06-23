@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c3ced11a606f6e428d4137a59dea673, type: 3}
+  m_Name: 3
+  m_EditorClassIdentifier: 
+  eventName: "\uC190\uB2D8\uC774 \uB41C \uB2ED"
+  description: "\uC624\uB298\uC758 \uCCAB \uC190\uB2D8\uC740....  \uB2ED\uC785\uB2C8\uB2E4."
+  dialogueLines:
+  - "\uAF2C\uAF2C...(\uACC4\uB780\uC774 \uB098\uC654\uB2E4...)\n"
+  - "\uC0C1\uC810 \uBC14\uB2E5\uC5D0 \uACC4\uB780\uC744 \uB0B4\uB824\uB193\uACE0
+    \uC720\uC720\uD788 \uB5A0\uB0AC\uB2E4\n"
+  minDayRequired: 2
+  hasChoices: 1
+  choices:
+  - choiceText: "\uB2EC\uAC40 \uAC10\uC0AC\uD569\uB2C8\uB2E4"
+    resultText: "\uB2EC\uAC40\uC744 \uD314\uC544 500\uACE8\uB4DC\uB97C \uC5BB\uC5C8\uB2E4"
+    goldChange: 500
+    reputationChange: 0
+  - choiceText: "\uB2EC\uAC40 \uAC10\uC0AC\uD569\uB2C8\uB2E4"
+    resultText: "\uB2EC\uAC40\uC744 \uD314\uC544 500\uACE8\uB4DC\uB97C \uC5BB\uC5C8\uB2E4"
+    goldChange: 500
+    reputationChange: 0

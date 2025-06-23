@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c3ced11a606f6e428d4137a59dea673, type: 3}
+  m_Name: 6
+  m_EditorClassIdentifier: 
+  eventName: "\uC624?\uB958\uAC00 \uC788\uB294 NPC"
+  description: "\uB300\uC0AC\uAC00 \uC644\uC804\uD558\uC9C0 \uC54A\uC740 NPC\uAC00
+    \uB098\uD0C0\uB0AC\uC2B5\uB2C8\uB2E4"
+  dialogueLines:
+  - "\uC548\uB155\uD558....."
+  - "\uC5B4...."
+  - "\uC5B4.."
+  - "\uC5EC\uAE30 \uADF8...."
+  - "\uBB3C..\uAC74 \uC788..."
+  - "\uC5B4... \uC544\uB2C8..."
+  minDayRequired: 5
+  hasChoices: 1
+  choices:
+  - choiceText: "\uBB50\uAC00 \uB42C\uB4E0 \uD314\uBA74 \uC7A5\uB561\uC774\uB2C8
+      \uD310\uB2E4"
+    resultText: "5000\uACE8\uB4DC\uB97C \uC5BB\uC5C8\uB2E4..\uBB50?... \uB2E4\uC2DC
+      \uD655\uC778\uD558\uB2C8\n5000\uACE8\uB4DC\uAC00 500\uACE8\uB4DC\uAC00 \uB418\uC5B4\uC788\uC5C8\uB2E4"
+    goldChange: 500
+    reputationChange: 0
+  - choiceText: "\uC81C\uC791\uC0AC\uC5D0 \uD56D\uC758\uD55C\uB2E4"
+    resultText: "\uB2EC\uB77C\uC9C0\uB294\uAC74 \uC5C6\uC5C8\uB2E4....(\uB9DD\uAC9C)"
+    goldChange: 0
+    reputationChange: 0

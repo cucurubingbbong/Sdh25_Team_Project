@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c3ced11a606f6e428d4137a59dea673, type: 3}
+  m_Name: 10
+  m_EditorClassIdentifier: 
+  eventName: "\uC0C1\uC810 \uD3C9\uAC00\uC6D0 \uBC29\uBB38"
+  description: "\uB9C8\uC744\uC5D0\uC11C \uACF5\uC2DD \uD3C9\uAC00\uC6D0\uC774 \uBC29\uBB38\uD588\uC2B5\uB2C8\uB2E4."
+  dialogueLines:
+  - "\uD760, \uBA3C\uC9C0\uAC00 3.2\uADF8\uB7A8\u2026 "
+  - ..........
+  - "\uC9C4\uC5F4\uC740\u2026"
+  - "\uC5B4? \uC774\uAC74 \uACE0\uC591\uC774 \uC0AC\uB8CC\uC5D0\uC694?"
+  minDayRequired: 9
+  hasChoices: 1
+  choices:
+  - choiceText: "\uB1CC\uBB3C\uC744 \uC2DC\uB3C4\uD55C\uB2E4"
+    resultText: "\uD3C9\uAC00\uC6D0\uC5D0\uAC8C \uAC12\uBE44\uC2FC \uC220\uC744 \uAC74\uB124\uBA70
+      \uBAA8\uB978\uCC99 \uD574\uB2EC\uB77C\uACE0 \uD55C \uB2F9\uC2E0\uC744 \uCE21\uC740\uD558\uAC8C
+      \uCCD0\uB2E4\uBCF4\uBA70 A+\uC744 \uAC74\uB124\uACE0 \uB5A0\uB09C\uB2E4...\n\uC774\uD6C4
+      \uB2F9\uC2E0\uC740 \uC774\uBBF8 \uC7A1\uB2E4\uD55C\uAC70 \uB2E4\uD30C\uB294
+      \uC0C1\uC810\uC5D0 \uC0AC\uB8CC\uD558\uB098\uAC00 \uB300\uC218\uB77C\uB294
+      \uC0DD\uAC01\uC744 \uD558\uBA70 \uC790\uC2E0\uC774 \uB9C8\uC2DC\uB824\uB358
+      \uC220\uC744 \uB5A0\uC62C\uB9AC\uBA70 \uC7A0\uC5D0 \uB4ED\uB2C8\uB2E4"
+    goldChange: 8000
+    reputationChange: 30
+  - choiceText: "\uC0DD\uAC01\uC744 \uD55C\uB2E4"
+    resultText: "\uC0DD\uAC01\uC744 \uD574\uBCF4\uB2C8 \uC7A1\uB2E4\uD55C\uAC83\uC744
+      \uB9CE\uC774 \uD314\uB2E4\uBCF4\uB2C8 \uC0AC\uB8CC \uD558\uB098\uCBE4\uC740
+      \uBCC4 \uB300\uC218\uAC00 \uC5C6\uAE30\uC5D0 \uB2F9\uC2E0\uC740 \uB2F9\uB2F9\uD788
+      \uBB38\uC81C\uAC00 \uC5C6\uB2E4\uBA70 \uC678\uCCE4\uC2B5\uB2C8\uB2E4.... \uD3C9\uAC00\uC6D0\uC740
+      A\uB97C \uC8FC\uBA70 \uB5A0\uB0A9\uB2C8\uB2E4"
+    goldChange: 0
+    reputationChange: 15
