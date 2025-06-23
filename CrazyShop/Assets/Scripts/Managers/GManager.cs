@@ -16,6 +16,8 @@ public class GManager : MonoBehaviour
 
     public TextMeshProUGUI repText;
 
+    public TextMeshProUGUI dayText;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -29,16 +31,19 @@ public class GManager : MonoBehaviour
 
     private void Start()
     {
-        StartDay();
+        EventManager.instance.TryRunEvent(0);
     }
 
     public void Update()
     {
         repText.text = reputation.ToString();
+        dayText.text = $"Day : {currentDay}";
+
     }
 
     public void StartDay()
     {
+        currentDay++;
         Debug.Log($" Day {currentDay} 시작");
         DistributeManager.instance.Distribute();
     }
@@ -46,7 +51,6 @@ public class GManager : MonoBehaviour
     public void EndDay()
     {
         Debug.Log($"Day {currentDay} 종료");
-        currentDay++;
         StartDay();
         DistributeManager.instance.ResetDailyDistribution();
     }

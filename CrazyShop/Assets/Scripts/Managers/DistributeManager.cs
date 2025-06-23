@@ -27,6 +27,7 @@ public class DistributeManager : MonoBehaviour
 
     public void Distribute()
     {
+        stockPanel.SetActive(true);
         if (alreadyDistributed) return;
 
         if (!GoldManager.Instance.TrySpendGold(cost))
@@ -51,7 +52,7 @@ public class DistributeManager : MonoBehaviour
 
         // 아이템 수량을 Dictionary로 정리
         Dictionary<ItemData, int> stockDict = new Dictionary<ItemData, int>();
-        int count = Random.Range(30, 60);
+        int count = Random.Range(15, 30);
 
         for (int i = 0; i < count; i++)
         {

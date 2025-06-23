@@ -130,8 +130,8 @@ public class EventManager : MonoBehaviour
 
         GoldManager.Instance.AddGold(choice.goldChange);
         GManager.instance.reputation += choice.reputationChange;
-
-        StartCoroutine(CloseAfterDelay(2.5f));
+        eventPanel.SetActive(false);
+        GManager.instance.EndDay();
     }
 
     IEnumerator CloseAfterDelay(float delay)

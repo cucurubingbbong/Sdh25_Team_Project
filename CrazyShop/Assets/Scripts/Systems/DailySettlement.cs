@@ -57,6 +57,7 @@ public class DailySettlement : MonoBehaviour
 
     public void StartEvent()
     {
+        settlementPanel.SetActive (false);
         EventManager.instance.TryRunEvent(GManager.instance.currentDay);
     }
 }
